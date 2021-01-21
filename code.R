@@ -15,6 +15,7 @@ library(shinyWidgets)
 library(shinythemes)
 library(tidyverse)
 library(reshape2)
+library(viridis)
 library(plotly)
 library(readxl)
 library(DT)
@@ -229,6 +230,7 @@ server <- function(input, output) {
   output$linhas = renderPlotly({
     ggplotly(dfscale %>% group_by(Região, Data) %>% summarise(Valor = mean(Valor*10^18)) %>% 
                ggplot(aes(x = Data, y = Valor, col = Região)) + geom_smooth(se = FALSE) + 
+               scale_color_viridis(discrete = TRUE, option = "D") +
                theme_minimal()) %>% layout(hovermode = 'compare')
   }
   )    
