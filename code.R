@@ -130,7 +130,7 @@ valor = dfscale %>% group_by(Região, Data) %>% summarise(Valor = mean(Valor*10^
 #   inner_join(valor, by = "code_state") %>% 
 #   ggplot() +
 #   geom_sf(aes(fill = Valor), color = "white") + 
-#     scale_fill_gradient(low = "gray89", high = "blue", na.value = NA) +
+#     scale_fill_gradient(low = "gray89", high = "green", na.value = NA) +
 #     coord_sf() +
 #     facet_wrap(~factor(Data), ncol = 3) +
 #     theme_minimal()) %>% ggplotly()
@@ -223,7 +223,7 @@ server <- function(input, output) {
                geom_sf(aes(fill = Valor), color = "white") + 
                #  scale_fill_viridis(name = "Índice de recuperação", direction = 1, 
                #                    option = "A", alpha = .752) +
-               scale_fill_gradient("Índice de recuperação", low = "gray89", high = "blue", na.value = NA) +
+               scale_fill_gradient("Índice de recuperação", low = "gray89", high = "green4", na.value = NA) +
                coord_sf() + labs(title = input$data) +
                theme_minimal())})
   output$linhas = renderPlotly({
