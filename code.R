@@ -161,7 +161,7 @@ ui <- fluidPage(
   tabsetPanel(
     # Application title
     tabPanel("Mapa",
-             titlePanel(strong("Índice de Recuperação Econômica do 3º trimestre de 2018 ao 3º trimestre de 2020")),
+             titlePanel("Índice de Recuperação Econômica do 3º trimestre de 2018 ao 3º trimestre de 2020"),
              hr(),
              # Sidebar with a slider input for number of bins 
              sidebarLayout(
